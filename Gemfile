@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'friendly_id', '~> 5.1.0'
+gem 'rack-cache'
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
