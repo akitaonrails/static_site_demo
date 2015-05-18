@@ -1,2 +1,7 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>Pages</h1>
+
+<ul>
+  <% @pages.each do |page| %>
+    <li><%= link_to page.title, page %></li>
+  <% end %>
+</ul>

@@ -4,6 +4,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
 gem 'rack-cache'
+gem 'redcarpet'
+gem 'rouge'
 gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

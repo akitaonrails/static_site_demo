@@ -10,6 +10,7 @@ RSpec.describe PagesController, type: :controller do
   end
 
   describe "GET #show" do
+    before { Page.create(title: 'foo')}
     it "returns http success" do
       get :show, id: 'foo'
       expect(response).to have_http_status(:success)

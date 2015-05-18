@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :title
       t.string :slug, null: false
       t.string :author
+      t.datetime :published_at
       t.text :summary
       t.text :summary_html
       t.text :body

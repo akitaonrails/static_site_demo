@@ -1,2 +1,4 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+<h1><%= @page.title %></h1>
+<p><%= @page.author %></p>
+<%= raw @page.summary_html %>
+<%= raw @page.body_html %>

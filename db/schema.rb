@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20150516195153) do
     t.string   "title"
     t.string   "slug",         null: false
     t.string   "author"
+    t.datetime "published_at"
     t.text     "summary"
     t.text     "summary_html"
     t.text     "body"
