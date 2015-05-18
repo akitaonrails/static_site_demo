@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
