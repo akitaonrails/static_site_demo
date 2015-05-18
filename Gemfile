@@ -2,10 +2,14 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
+gem 'rails_12factor', group: :production
 gem 'activeadmin', github: 'activeadmin'
+gem 'dalli'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'friendly_id', '~> 5.1.0'
+gem 'kgio'
+gem 'memcachier'
 gem 'puma'
 gem 'rack-cache'
 gem 'redcarpet'
