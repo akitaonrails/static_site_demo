@@ -13,6 +13,7 @@ gem 'memcachier'
 gem 'newrelic_rpm'
 gem 'puma'
 gem 'rack-cache', require: 'rack/cache'
+gem 'rack-timeout'
 gem 'redcarpet'
 gem 'rouge'
 
