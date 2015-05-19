@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
     @pages = fetch_resources
-    if stale?(etag: resources_etag(@pages), public: true)
+    if stale?(resources_etag(@pages))
       respond_to do |wants|
         wants.html
       end
@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   def show
     @page = fetch_resource(params[:id])
-    fresh_when etag: "#{deploy_id}/#{@page.cache_key}", public: true
+    fresh_when last_modified: @page.updated_at.utc, etag: "#{deploy_id}/#{@page.cache_key}", public: true
   end
 
   private
@@ -22,7 +22,8 @@ class PagesController < ApplicationController
 
   def resources_etag(pages)
     recent_updated_at = pages.pluck(:updated_at).max || Time.current
-    "#{deploy_id}/pages_index/#{recent_updated_at.iso8601}"
+    etag = "#{deploy_id}/pages_index/#{recent_updated_at.iso8601}"
+    { last_modified: recent_updated_at.utc, etag: etag, public: true }
   end
 
   def fetch_resource(id)
