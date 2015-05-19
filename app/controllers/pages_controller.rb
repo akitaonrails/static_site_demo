@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @pages = Page.recent.limit(10)
-    recent_updated_at = @pages.pluck(:updated_at).max || Time.current
-    etag = "#{deploy_id}/products_index/#{recent_updated_at.iso8601}"
-    if stale?(etag: etag, public: true)
+    @pages = fetch_resources
+    if stale?(etag: resources_etag(@pages), public: true)
       respond_to do |wants|
         wants.html
       end
@@ -11,7 +9,24 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = Page.friendly.find(params[:id])
+    @page = fetch_resource(params[:id])
     fresh_when etag: "#{deploy_id}/#{@page.cache_key}", public: true
+  end
+
+  private
+
+  def fetch_resources
+    cache_key = "#{deploy_id}/pages/limit/10"
+    Rails.cache.fetch(cache_key, expires_in: 1.day) { Page.recent.limit(10) }
+  end
+
+  def resources_etag(pages)
+    recent_updated_at = pages.pluck(:updated_at).max || Time.current
+    "#{deploy_id}/pages_index/#{recent_updated_at.iso8601}"
+  end
+
+  def fetch_resource(id)
+    cache_key = "#{deploy_id}/page/#{id}"
+    Rails.cache.fetch(cache_key, expires_in: 1.hour) { Page.friendly.find(id) }
   end
 end
