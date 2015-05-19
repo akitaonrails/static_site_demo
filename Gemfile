@@ -11,7 +11,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'kgio'
 gem 'memcachier'
 gem 'puma'
-gem 'rack-cache'
+gem 'rack-cache', require: 'rack/cache'
 gem 'redcarpet'
 gem 'rouge'
 

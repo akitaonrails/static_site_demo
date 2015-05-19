@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @pages = Page.recent.limit(10)
     recent_updated_at = @pages.pluck(:updated_at).max || Time.current
     etag = "#{deploy_id}/products_index/#{recent_updated_at.iso8601}"
-    if stale?(last_modified: recent_updated_at, etag: etag)
+    if stale?(etag: etag, public: true)
       respond_to do |wants|
         wants.html
       end
@@ -12,6 +12,6 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.friendly.find(params[:id])
-    fresh_when last_modified: @page.updated_at.utc, etag: "#{deploy_id}/#{@page.cache_key}"
+    fresh_when etag: "#{deploy_id}/#{@page.cache_key}", public: true
   end
 end
