@@ -1,31 +1,21 @@
-== README
+== Static Web Site Demonstration using Raptor/Passenger 5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the companion example site used in the article:
 
-Things you may want to cover:
+* [Raptor based Dynamic Site as fast as a Static Generated One with Raptor](http://www.akitaonrails.com/2015/05/20/raptor-based-dynamic-site-as-fast-as-a-static-generated-one-with-raptor)
 
-* Ruby version
+Other sources:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-https://robots.thoughtbot.com/introduction-to-conditional-http-caching-with-rails
-http://crabonature.pl/posts/17-syntax-highlighting-in-ruby-on-rails
+* http://crabonature.pl/posts/17-syntax-highlighting-in-ruby-on-rails
+* https://devcenter.heroku.com/articles/rack-cache-memcached-rails31
+* http://snippets.aktagon.com/snippets/302-how-to-setup-and-use-rack-cache-with-rails
+* http://www.mobify.com/blog/beginners-guide-to-http-cache-headers/
+* https://robots.thoughtbot.com/a-guide-to-caching-your-rails-application-with-fastly
+* http://blog.marc-seeger.de/2010/12/09/added-caching-to-my-blog/
+* http://www.brianstorti.com/working-with-http-cache/
+* http://guides.rubyonrails.org/caching_with_rails.html#conditional-get-support
+* http://rtomayko.github.io/rack-cache/storage
+* http://www.schneems.com/post/20472425017/super-charge-your-rails-app-with-rack-cache-and/
+* https://www.stormconsultancy.co.uk/blog/development/6-ways-to-get-more-bang-for-your-heroku-buck-while-making-your-rails-site-super-snappy/
+* https://robots.thoughtbot.com/introduction-to-conditional-http-caching-with-rails
+* http://crabonature.pl/posts/17-syntax-highlighting-in-ruby-on-rails
