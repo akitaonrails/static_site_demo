@@ -138,8 +138,6 @@ GEM
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     rack (1.6.1)
-    rack-cache (1.2)
-      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.0.4)
@@ -253,7 +251,6 @@ DEPENDENCIES
   newrelic_rpm
   passenger
   pg
-  rack-cache
   rack-timeout
   rails (= 4.2.1)
   rails_12factor
